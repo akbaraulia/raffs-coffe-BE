@@ -2,8 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Auth\Events\Logout;
+use App\Models\Menu;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +29,11 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::get('/bacot-sia', function () {
+Route::get('/order-kamu', function () {
+    return view('order-kamu');
+});
+
+Route::get('/takeaway', function () {
     return view('_index');
 });
 
@@ -38,23 +47,25 @@ Route::get('/logout', [LoginController::class, 'logout']);
 
 Route::middleware('login')->group(function() {
     Route::get('/admin', function() {
-        return view('admin.index');
+        return view('pages.admin.index');
     })->middleware('admin')->name('admin.index');
-    Route::resource('admin/register', RegisterController::class)->middleware('admin');
+    Route::resource('register', RegisterController::class)->middleware('admin');
+    Route::resource('userview', UserController::class)->middleware('admin');
+    Route::resource('profile', ProfileController::class)->middleware('admin');
+    // Route::resource('register', RegisterController::class)->middleware('admin');
 
-    // Route::get('/belidong', function() {
-    //     $menu = Menu::latest()->simplePaginate(5);
-        
-    //     return view('user.belidong.index',  ['menu' => $menu]);
-    // })->middleware('user')->name('daftarmenu.index');
-    
+    // Route::resource('admin.register', 'RegisterController');
+    // Route::PUT('admin/register/edit/{id}', 'RegisterController@update')->middleware('admin');
+    // Route::put('admin/register/edit/{id}','RegisterController@update');
+
     Route::get('/kasir', function() {
-        return view('kasir.index');
+        return view('pages.kasir.index');
     })->middleware('kasir')->name('kasir.index');
-    // Route::resource('kasir/menu', MenuController::class)->middleware('kasir');
-    // Route::get('/kasir/laporan', function() {
-    //     return view('kasir.laporan.index');
-    // })->middleware('kasir');
+    Route::resource('menu', MenuController::class)->middleware('kasir');
+    Route::resource('menu', MenuController::class)->middleware('kasir');
+    Route::get('/kasir/laporan', function() {
+        return view('pages.kasir.laporan.index');
+    })->middleware('kasir');
     // Route::get('/get-transaksi', [TransaksiController::class, 'filtering']); 
 
     // Route::get('/transaksi_pdf', [TransaksiController::class, 'cetak_pdf'])->middleware('kasir');

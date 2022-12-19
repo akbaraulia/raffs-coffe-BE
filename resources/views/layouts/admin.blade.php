@@ -49,38 +49,21 @@
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
                                 <i class="bi bi-stack"></i>
-                                <span>Components</span>
+                                <span>Aktifitas</span>
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="component-alert.html">Alert</a>
+                                    <a href="">Menu</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="component-alert.html">History Pembelian</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="component-alert.html">Pemasukan Bulanan</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class="sidebar-item  has-sub">
-                            <a href="#" class='sidebar-link'>
-                                <i class="bi bi-collection-fill"></i>
-                                <span>Extra Components</span>
-                            </a>
-                            <ul class="submenu ">
-                                <li class="submenu-item ">
-                                    <a href="extra-component-avatar.html">Avatar</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-sweetalert.html">Sweet Alert</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-toastify.html">Toastify</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-rating.html">Rating</a>
-                                </li>
-                                <li class="submenu-item ">
-                                    <a href="extra-component-divider.html">Divider</a>
-                                </li>
-                            </ul>
-                        </li>
 
                         <li class="sidebar-item  has-sub">
                             <a href="#" class='sidebar-link'>
@@ -89,7 +72,13 @@
                             </a>
                             <ul class="submenu ">
                                 <li class="submenu-item ">
-                                    <a href="{{ route('register.index') }}">Account</a>
+                                    <a href="{{ route('register.index') }}">Account Coffe</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="{{ route('userview.index') }}">Account User</a>
+                                </li>
+                                <li class="submenu-item ">
+                                    <a href="{{ route('profile.index') }}">Edit Profile Website</a>
                                 </li>
                             </ul>
                         </li>

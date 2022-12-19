@@ -20,6 +20,11 @@
                     </div>
                 </div>
             </div>
+
+            @if (session('success'))
+                <h6 class="alert alert-success">{{ session('success') }}</h6>
+            @endif
+            
             <section class="section">
                 <div class="card">
                     <div class="card-header">

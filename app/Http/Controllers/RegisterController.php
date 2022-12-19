@@ -1,7 +1,7 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\User;
 
@@ -14,9 +14,10 @@ class RegisterController extends Controller
      */
     public function index()
     {
-        $user = User::latest()->simplePaginate(5);
+        $user = DB::table('users')->wherein('role', ['Admin','Kasir'])->get();
+        // $user = User::latest()->simplePaginate(5);
 
-        return view('admin.register.index' , compact('user')) //compact = membungkus
+        return view('pages.admin.register.index' , compact('user')) //compact = membungkus
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,9 +28,13 @@ class RegisterController extends Controller
      */
     public function create()
     {
-        return view('admin.register.create');
+        return view('pages.admin.register.create');
     }
 
+    public function view()
+    {
+        return view('pages.admin.register.view');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -71,7 +76,7 @@ class RegisterController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('admin.register.edit',compact('user'));
+        return view('pages.admin.register.edit',compact('user'));
     }
 
     /**
@@ -109,4 +114,6 @@ class RegisterController extends Controller
         $user->delete();
         return redirect()->route('register.index')->with('success','Berhasil Hapus !');
     }
+
+    
 }

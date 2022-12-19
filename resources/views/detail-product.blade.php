@@ -3,33 +3,26 @@
 @section('title', 'Halaman Detail Product')
 
 @section('content')
-<div class="container mt-5">
+<div class="container custom-margin">
    <div class="row">
-      <div class="col-xl-6">
-         <img src="{{ asset('assets/images/product_image.jpeg') }}" class="img-fluid" alt="detail-product">
+      <div class="col-xl-5">
+         <img src="{{ asset('assets/images/mie_ayam.png') }}" class="img-fluid rounded-4 w-100 justify-content-center"
+            alt="detail-product">
       </div>
-      <div
-         class="col-xl-3 mt-lg-3 mb-lg-2 mt-md-3 mb-md-2 mt-sm-3 mb-sm-2 mt-3 mb-2 justify-content-center align-self-center">
-         <div class="px-4">
-            <h1 class="px-3">MIE AYAM</h1>
-            <hr />
-            <p class="px-3">Harga: Rp. 25.000,00</p>
-            <hr />
-            <p class="px-3 desc-product lh-base">Deskripsi : Lorem Ipsum
-               is simply dummy text of
-               the printing and
-               typesetting industry.
-               Lorem Ipsum has been
-               the industry's standard
-               dummy text ever since
-               the 1500s, when an
-               unknown printer took
-               a galley of type.</p>
+      <div class="col-xl-4 mb-lg-2 mb-md-2 mb-sm-2 mb-2 justify-content-center">
+         <div class="detail-product px-4">
+            <h1 class="detail-title mt-xl-0 mt-3">Mie Ayam</h1>
+            <p class="price-text">Rp. 25.000,00<span class="porsi">/porsi</span></p>
+            <p class="desc-product">Lorem ipsum dolor sit amet consectetur. Dictum sit nunc id congue leo neque
+               massa. Viverra condimentum consequat aliquam
+               scelerisque non a nulla penatibus lectus. Tempor nulla faucibus magna augue nunc pellentesque nibh
+               pulvinar risus.
+               Euismod orci sit habitasse tempus.</p>
          </div>
       </div>
       <div class="col-xl-3">
-         <div class="card border border-0 custom-card mb-5">
-            <div class="card-body ">
+         <div class="card card-detail-product border-0 mb-5">
+            <div class="card-body">
                <div class="d-flex justify-content-between mt-2 mb-3">
                   <span>Harga:</span>
                   <span>Rp. 25.000,00</span>
@@ -68,13 +61,13 @@
                   </div>
                </div>
                <div class="mb-3">
-                  <a href="/detail-product"
-                     class="button-primary d-none d-md-block py-2 px-4 rounded-4 text-center justify-content-center">Tambah
-                     ke Order</a>
+                  <a href="/order-kamu"
+                     class="button-primary d-none d-md-block py-2 px-5 text-center justify-content-center">Tambah
+                     Order</a>
 
-                  <a href="/detail-product"
-                     class="button-primary d-sm-block d-md-none py-2 px-4 rounded-4 text-center d-flex justify-content-center">Tambah
-                     ke Order</a>
+                  <a href="/order-kamu"
+                     class="button-sm-primary d-sm-block d-md-none py-2 px-2 text-center d-flex justify-content-center">Tambah
+                     Order</a>
                </div>
             </div>
          </div>
